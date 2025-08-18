@@ -1,0 +1,10 @@
+#quadrado {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    cursor: move;
+    overflow: auto;
+}
