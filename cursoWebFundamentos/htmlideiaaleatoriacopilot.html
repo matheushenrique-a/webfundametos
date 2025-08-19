@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrado Drag & Resize Pro</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100dvh;
+            overflow: hidden;
+        }
+        #quadrado {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background: #3498db;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px #0002;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: none;
+        }
+        .handle {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border: 2px solid #f10000;
+            border-radius: 50%;
+            z-index: 2;
+            box-sizing: border-box;
+        }
+        .handle.nw { left: -1px; top: -1px; cursor: nwse-resize; }
+        .handle.ne { right: -1px; top: -1px; cursor: nesw-resize; }
+        .handle.sw { left: -1px; bottom: -1px; cursor: nesw-resize; }
+        .handle.se { right: -1px; bottom: -1px; cursor: nwse-resize; }
+        .handle.n { left: 50%; top: -2px; transform: translateX(-50%); cursor: n-resize; }
+        .handle.s { left: 50%; bottom: -2px; transform: translateX(-50%); cursor: s-resize; }
+        .handle.e { right: -2px; top: 50%; transform: translateY(-50%); cursor: e-resize; }
+        .handle.w { left: -2px; top: 50%; transform: translateY(-50%); cursor: w-resize; }
+    </style>
+</head>
+<body>
+    <div id="quadrado">
+        <div class="handle nw" data-dir="nw"></div>
+        <div class="handle ne" data-dir="ne"></div>
+        <div class="handle sw" data-dir="sw"></div>
+        <div class="handle se" data-dir="se"></div>
+        <div class="handle n" data-dir="n"></div>
+        <div class="handle s" data-dir="s"></div>
+        <div class="handle e" data-dir="e"></div>
+        <div class="handle w" data-dir="w"></div>
+    </div>
+    <script>
+        const quad = document.getElementById('quadrado');
+        const minSize = 100;
+        let state = {
+            dragging: false,
+            resizing: false,
+            resizeDir: '',
+            offsetX: 0,
+            offsetY: 0,
+            startRect: null,
+            startX: 0,
+            startY: 0,
+            handle: null
+        };
+
+        function getRect() {
+            return quad.getBoundingClientRect();
+        }
+
+        function setQuadStyle({ left, top, width, height }) {
+            quad.style.left = left + 'px';
+            quad.style.top = top + 'px';
+            quad.style.width = width + 'px';
+            quad.style.height = height + 'px';
+        }
+
+        function getResizeDir(x, y, rect) {
+            const border = 10;
+            let dir = '';
+            if (y < border) dir += 'n';
+            else if (y > rect.height - border) dir += 's';
+             if (x < border) dir += 'w';
+            else if (x > rect.width - border) dir += 'e';
+            return dir;
+        }
+
+        function getCursor(dir) {
+            const map = {
+                n: 'n-resize', s: 's-resize', e: 'e-resize', w: 'w-resize',
+                nw: 'nwse-resize', se: 'nwse-resize',
+                ne: 'nesw-resize', sw: 'nesw-resize'
+            };
+            return map[dir] || 'move';
+        }
+
+        function updateCursor(dir) {
+            document.body.style.cursor = getCursor(dir);
+        }
+
+        function clamp(val, min, max) {
+            return Math.max(min, Math.min(max, val));
+        }
+
+        function pointerPos(e) {
+            // Touch or mouse
+            if (e.touches) e = e.touches[0];
+            return { x: e.clientX, y: e.clientY };
+        }
+
+        function withinBounds(rect, w, h, l, t) {
+            // Ensure stays within viewport
+            let maxW = window.innerWidth - l;
+            let maxH = window.innerHeight - t;
+            return {
+                width: clamp(w, minSize, maxW),
+                height: clamp(h, minSize, maxH),
+                left: clamp(l, 0, window.innerWidth - minSize),
+                top: clamp(t, 0, window.innerHeight - minSize)
+            };
+        }
+
+        // Dragging
+        function onPointerDown(e) {
+            if (e.button != null && e.button !== 0) return; // Only left button
+            const pos = pointerPos(e);
+            const rect = getRect();
+
+            // Check for handle
+            let handle = e.target.classList.contains('handle') ? e.target : null;
+            if (handle) {
+                state.resizing = true;
+                state.resizeDir = handle.dataset.dir;
+                state.startRect = rect;
+                state.startX = pos.x;
+                state.startY = pos.y;
+                state.handle = handle;
+                updateCursor(state.resizeDir);
+            } else if (e.target === quad) {
+                // Only drag with quad, not handles!
+                state.dragging = true;
+                state.offsetX = pos.x - rect.left;
+                state.offsetY = pos.y - rect.top;
+                state.startRect = rect;
+                updateCursor('move');
+            }
+            document.addEventListener('mousemove', onPointerMove, {passive: false});
+            document.addEventListener('mouseup', onPointerUp);
+            document.addEventListener('touchmove', onPointerMove, {passive: false});
+            document.addEventListener('touchend', onPointerUp);
+            e.preventDefault();
+        }
+
+        function onPointerMove(e) {
+            if (!state.dragging && !state.resizing) return;
+
+            const pos = pointerPos(e);
+            if (state.dragging) {
+                let left = clamp(pos.x - state.offsetX, 0, window.innerWidth - state.startRect.width);
+                let top = clamp(pos.y - state.offsetY, 0, window.innerHeight - state.startRect.height);
+                setQuadStyle({
+                    left, top,
+                    width: state.startRect.width,
+                    height: state.startRect.height
+                });
+            } else if (state.resizing) {
+                let { width, height, left, top } = state.startRect;
+                let dx = pos.x - state.startX;
+                let dy = pos.y - state.startY;
+                let dir = state.resizeDir;
+
+                if (dir.includes('e')) width += dx;
+                if (dir.includes('s')) height += dy;
+                if (dir.includes('w')) {
+                    width -= dx;
+                    left += dx;
+                }
+                if (dir.includes('n')) {
+                    height -= dy;
+                    top += dy;
+                }
+                // Clamp to viewport and minSize
+                ({ width, height, left, top } = withinBounds(state.startRect, width, height, left, top));
+                setQuadStyle({ left, top, width, height });
+            }
+            e.preventDefault();
+        }
+
+        function onPointerUp(e) {
+            state.dragging = false;
+            state.resizing = false;
+            state.resizeDir = '';
+            state.handle = null;
+            state.startRect = null;
+            updateCursor('');
+            document.removeEventListener('mousemove', onPointerMove);
+            document.removeEventListener('mouseup', onPointerUp);
+            document.removeEventListener('touchmove', onPointerMove);
+            document.removeEventListener('touchend', onPointerUp);
+        }
+
+        // Cursor feedback
+        quad.addEventListener('mousemove', (e) => {
+            const rect = getRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            let dir = getResizeDir(x, y, rect);
+            quad.style.cursor = dir ? getCursor(dir) : 'move';
+            updateCursor(dir ? dir : '');
+        });
+
+        quad.addEventListener('mouseleave', () => updateCursor(''));
+
+        // Touch support
+        quad.addEventListener('touchstart', onPointerDown, {passive: false});
+        // Mouse support
+        quad.addEventListener('mousedown', onPointerDown);
+
+        // Prevent ghost drag: only ativa se quadrado ou handle
+        document.addEventListener('dragstart', e => e.preventDefault());
+
+        // Melhoria de desempenho: listeners só ativos quando drag/resize
+        // Usabilidade: handles visuais
+
+        // Extra: window resize mantêm quadrado visível
+        window.addEventListener('resize', () => {
+            const rect = getRect();
+            let left = clamp(rect.left, 0, window.innerWidth - rect.width);
+            let top = clamp(rect.top, 0, window.innerHeight - rect.height);
+            setQuadStyle({ left, top, width: rect.width, height: rect.height });
+        });
+    </script>
+</body>
+</html>

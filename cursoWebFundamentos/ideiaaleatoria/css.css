@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 #quadrado {
     width: 100px;
     height: 100px;

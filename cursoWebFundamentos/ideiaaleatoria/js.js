@@ -9,7 +9,7 @@ let startY = 0;
 const borderSize = 10;
 const minSize = 100;
 
-// Detecta cursor sobre bordas (antes do clique)
+
 quad.addEventListener('mousemove', (e) => {
     if (isResizing) {
         quad.style.cursor = getCursor(resizeDir);
@@ -30,7 +30,7 @@ quad.addEventListener('mousemove', (e) => {
     quad.style.cursor = dir ? getCursor(dir) : 'move';
 });
 
-// Inicia drag ou resize
+
 quad.addEventListener('mousedown', (e) => {
     const rect = quad.getBoundingClientRect();
     startRect = rect;
@@ -59,7 +59,7 @@ quad.addEventListener('mousedown', (e) => {
     e.preventDefault();
 });
 
-// Drag e resize
+
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
         quad.style.left = e.clientX - offsetX + 'px';
@@ -92,7 +92,7 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
-// Finaliza drag ou resize
+
 document.addEventListener('mouseup', () => {
     isDragging = false;
     isResizing = false;
@@ -100,7 +100,7 @@ document.addEventListener('mouseup', () => {
     startRect = null;
 });
 
-// Função auxiliar para retornar o cursor correto
+
 function getCursor(dir) {
     if (dir.length === 1) {
         return dir === 'n' ? 'n-resize' :
