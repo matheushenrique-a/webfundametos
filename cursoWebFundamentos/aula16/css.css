@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Roboto Mono", monoscape;
+    padding: 1rem;
+}
+
+div {
+    max-width: 600px;
+    min-width: auto;
+    margin: 0 auto;
+    padding: 0.2rem;
+}
+
+h1 {
+    color: rgba(12, 25, 138, 0.911);
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    text-indent: 1rem;
+    font-style: italic;
+    font-size: 2.3rem;
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+p {
+    text-align-last: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    display: inline-block;
+    background: aliceblue;
+    border-radius: 1rem;
+    border: 0.3rem solid black;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    box-shadow: 0.4rem 0.4rem 0.4rem 0.1rem rgb(74, 86, 90);
+}
+
+p:hover {
+    background: rgb(240, 210, 255);
+    transition: all 300ms ease;
+}
