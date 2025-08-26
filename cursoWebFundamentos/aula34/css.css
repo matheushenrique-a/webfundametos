@@ -1,0 +1,118 @@
+:root {
+    --dark-grey-color: rgb(61, 61, 61);
+    --calc-p-size: clamp(14px, calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))), 20px);
+    --calc-h1-size: clamp(20px, calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320))), 36px);
+    --calc-h2-size: clamp(18px, calc(24px + (28 - 24) * ((100vw - 320px) / (1920 - 320))), 28px);
+    --calc-port-p-size: clamp(14px, calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320))), 30px);
+    --calc-port-h1-size:  clamp(24px, calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320))), 32px);
+    --calc-port-h2-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320))), 28px);
+}
+
+div {
+    border: 2px solid black;
+    padding: 6px 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    margin: 10px auto 10px auto;
+}
+
+h1 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    background: #acafd5;
+    font-size: var(--calc-h1-size);
+    text-align: center;
+    color: #0C175D;
+}
+
+.p_principal {
+    text-align: center;
+    margin-top: 0;
+    background: #BBBFDE;
+}
+
+h2 {
+    margin-top: 2.5rem;
+    color: #121A66;
+    background: #B6B6B6;
+    font-size: var(--calc-h2-size);
+    border-bottom: 3px solid #121A66;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
+
+b {
+    color: blue;
+}
+
+b:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h3 {
+    margin-top: 2rem;
+    color: var(--dark-grey-color);
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    line-height: 1.5rem;
+    list-style-position: inside;
+}
+
+p {
+    font-size: var(--calc-p-size);
+}
+
+.p_forte {
+    color: var(--dark-grey-color);
+    font-weight: bold;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    background: rgb(216, 240, 248);
+}
+
+.menu li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: var(--calc-p-size);
+}
+
+.menu a:hover {
+    background: rgba(0, 0, 0, 0.849);
+    color: rgb(211, 211, 211);
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px rgb(163, 163, 163);
+    transition: all 200ms ease-in-out;
+}
+
+@media (orientation: portrait) {
+    h1 {
+        font-size: var(--calc-port-h1-size);
+    }
+    
+    h2 {
+        font-size: var(--calc-port-h2-size);
+    }
+
+    p {
+        font-size: var(--calc-port-p-size);
+    }
+}

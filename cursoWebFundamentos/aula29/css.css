@@ -1,0 +1,13 @@
+body {
+    font-family: sans-serif;
+}
+
+ul li {
+    list-style: armenian inside;
+    background: lightblue;
+    color: blue;
+}
+
+ol li {
+    list-style: lower-roman inside;
+}
