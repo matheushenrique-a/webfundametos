@@ -1,0 +1,138 @@
+:root {
+    --calc-p-size: clamp(16px, calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))), 20px);
+    --calc-h1-size: clamp(20px, calc(36px + (40 - 36) * ((100vw - 320px) / (1920 - 320))), 40px);
+    --calc-h2-size: clamp(18px, calc(24px + (28 - 24) * ((100vw - 320px) / (1920 - 320))), 28px);
+    --calc-port-p-size: clamp(14px, calc(14px + (30 - 14) * ((100vw - 320px) / (1920 - 320))), 30px);
+    --calc-port-h1-size:  clamp(24px, calc(24px + (32 - 24) * ((100vw - 320px) / (1920 - 320))), 32px);
+    --calc-port-h2-size: clamp(20px, calc(20px + (28 - 20) * ((100vw - 320px) / (1920 - 320))), 28px);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+p, a {
+    font-size: var(--calc-p-size);
+}
+
+h1 {
+    font-size: var(--calc-h1-size);
+}
+
+h2 {
+    font-size: var(--calc-h2-size);
+}
+
+.header {
+    background: url(../aula36/imagens/bg.jpg) right bottom / cover  no-repeat;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+}
+
+.header nav {
+    text-align: right;
+    margin-right: 16px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.header nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.header nav ul li a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.774);
+    outline: 1px solid;
+    transition: all 200ms ease;
+}
+
+.header nav ul li a:hover {
+    background: black;
+    text-decoration: underline;
+}
+
+.header header {
+    margin-bottom: 50px;
+}
+
+.header header h1 {
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.header header p {
+    background: rgba(0, 0, 0, 0.774);
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    border-bottom: 2px solid;
+}
+
+section {
+    margin: 0 auto;
+    background: rgb(224, 221, 221);
+    padding: 20px;
+}
+
+section article {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    padding: 10px;
+    border: 1px solid gray;
+}
+
+section article h2 {
+    background: rgb(14, 124, 38);
+    padding: 7px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgb(9, 80, 24);
+}
+
+section article p {
+    line-height: 1.5;
+    padding: 7px;
+    text-align: justify;
+    word-break: break-all;
+    margin-bottom: 8px;
+}
+
+section article footer {
+    background: rgba(97, 91, 81, 0.781);
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 7px;
+}
+
+section article footer a {
+    display: block;
+    padding: 8px;
+    color: rgb(8, 29, 126);
+    font-weight: bold;
+    transition: all 200ms ease;
+}
+
+section article footer a:hover {
+    background: black;
+    color: white;
+}
+
+body > footer {
+    padding: 25px;
+    text-align: center;
+    background: rgba(54, 27, 27, 0.747);
+    color: white;
+}

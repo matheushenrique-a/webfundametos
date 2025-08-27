@@ -1,0 +1,42 @@
+body {
+    background-image: url(imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100vh;
+    max-width: 700px;
+    margin: auto;
+    font-size: 22px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    padding: 4px;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.gif {
+    width: 100%;
+}
+
+.logo {
+    width: 400px;
+}
+
+.borda {
+    border-radius: 10px;
+    background: rgb(197, 255, 247);
+    margin: 10px;
+    border: 2px solid;
+    padding: 5px;
+}
+
+.img-float-left {
+    float: left;
+}
+
+.img-float-right {
+    float: right;
+}
