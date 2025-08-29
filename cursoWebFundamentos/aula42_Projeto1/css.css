@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+    overflow-x: hidden;
+}
+
+.cabecalho {
+    background: url(imagens/bg-2.jpg) right center / cover no-repeat;
+    padding-top: 1px;
+}
+
+.cabecalho nav {
+    text-align: right;
+}
+
+.cabecalho nav ul {
+    margin: 19px 50px 0 0;
+}
+
+.cabecalho nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    border: 1px solid white;
+    margin-left: 10px;
+}
+
+.cabecalho nav ul li a {
+    background: rgba(0, 0, 0, .7);
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: all 200ms ease-in-out;
+}
+
+.cabecalho nav ul li a:hover {
+    background: rgba(0, 0, 0, .9);
+    font-weight: bold;
+}
+
+.div-cabecalho {
+    width: 80%;
+    margin: 50px auto 0 auto;
+    text-align: center;
+    color: white;
+}
+
+.div-cabecalho h1 {
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+    font-size: 56px;
+    margin: 0;
+    display: inline-block;
+}
+
+.div-cabecalho p {
+    background: rgba(0, 0, 0, .7);
+    display: inline-block;
+    padding: 9px;
+    border-bottom: 2px solid;
+    margin-bottom: 40px;
+}
+
+main {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+main section {
+    padding: 0 32px;
+}
+
+main section div article {
+    background: white;
+    padding: 16px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+}
+
+main section div article h2 {
+    border-bottom: 2px solid #bbb;
+    background: #eee;
+    padding: 10px;
+    margin-top: 0;
+}
