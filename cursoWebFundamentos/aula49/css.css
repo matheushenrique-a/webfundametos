@@ -1,0 +1,27 @@
+#container div {
+    width: 175px;
+    height: 175px;
+    background: orange;
+    margin-bottom: 5px;
+}
+
+#container {
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid;
+    width: 100%;
+}
+
+#div1 {
+    float: left;
+}
+
+#div2 {
+    float: right;
+    width: 350px;
+    background: rgba(119, 59, 59, 0.671);
+    z-index: 999;
+}
+
+#div3 {
+    clear: both;
+}

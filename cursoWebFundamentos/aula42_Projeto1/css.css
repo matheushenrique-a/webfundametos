@@ -75,16 +75,35 @@ main section {
     padding: 0 32px;
 }
 
-main section div article {
+main section article {
     background: white;
     padding: 16px;
     margin-bottom: 32px;
     margin-top: 32px;
+    position: relative;
 }
 
-main section div article h2 {
+main section article h2 {
     border-bottom: 2px solid #bbb;
     background: #eee;
     padding: 10px;
     margin-top: 0;
+}
+
+.btn {
+    background-color: #cdc7c3;
+    display: block;
+    padding: 12px 16px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-left: auto;
+}
+
+.rodape {
+    color: white;
+    background-color: #6b6c68;
+    text-align: center;
+    padding: 30px;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 1px;
 }
