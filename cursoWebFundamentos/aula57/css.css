@@ -1,0 +1,120 @@
+.flexbox {
+    height: 250px;
+    border: 3px solid red;
+    margin-bottom: 16px;
+    display: flex;
+}
+
+.flexbox div {
+    border: 2px solid orange;
+    width: 150px;
+    margin: 15px;
+}
+
+.flex-container1 {
+    flex-flow: row wrap;
+}
+
+.flex-container2 {
+    justify-content: space-around;
+}
+
+.flex-container2 div {
+    width: 30px;
+    margin: 0;
+}
+
+.flex-container3 {
+    justify-content: space-evenly;
+    align-items: center;
+}
+.flex-container3 div {
+    width: 30px;
+    margin: 0;
+}
+
+.flex-container4 {
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.flex-container4 div {
+    width: 30px;
+    margin: 0;
+}
+
+.flex-container5 {
+    justify-content: center;
+    align-content :space-around;
+    flex-wrap: wrap;
+}
+
+.flex-container5 div {
+    width: 150px;
+}
+
+.flex-container6 {
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.flex-container6 div {
+    background: yellow;
+    width: 50px;
+    height: 50px;
+}
+
+.flex-container6 .div2 {
+    flex-basis: calc(100% - ((50px * 3) + ((15px * 2) * 3)));
+}
+
+.flex-container7 {
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.flex-container7 div {
+    flex-basis: 50px;
+    background-color: orange;
+    margin: 0;
+}
+
+.flex-container7 .div2 {
+    flex-grow: 1;
+}
+
+.flex-container7 .div4 {
+    flex-grow: 3;
+}
+
+.flex-container8 {
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.flex-container8 div {
+    margin: 0;
+}
+
+.flex-container8 .div1 {
+    flex-shrink: 2;
+    flex-grow: 1;
+}
+
+.flex-container9 div {
+    background: forestgreen;
+}
+
+.flex-container9 .div2 {
+    order: 1;
+    align-self: center;
+}
+
+.flex-container9 .div1 {
+    order: 3;
+    align-self: flex-end;
+}
+
+.flex-container9 .div4 {
+    order: 2;
+}

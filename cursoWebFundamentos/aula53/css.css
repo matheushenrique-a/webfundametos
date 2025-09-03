@@ -1,15 +1,30 @@
 #div1 {
-background: orange;
-
+background: rgb(0, 255, 0, .5);
+padding: 10px;
+width: 80%;
+position: sticky;
+top: 0;
+bottom: 0;
+border-top: 10px solid red;
+border-right: 10px solid blue;
 }
 
 #div2 {
-background: blue;
-
+background: rgba(0, 0, 255, .5);
+padding: 10px;
+width: 80%;
+height: 80px;
+position: relative;
 }
 
 #div3 {
-background: red;
-
+background: rgba(255, 0, 0, .5);
+padding: 10px;
+width: 30px;
+height: 30px;
+position: absolute;
+right: 50%;
+bottom: 50%;
+transform: translate(50%, 50%);
 }
 

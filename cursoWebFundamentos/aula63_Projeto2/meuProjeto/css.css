@@ -1,0 +1,108 @@
+body {
+    background: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.head-contact {
+    text-align: center;
+}
+
+.contact-list {
+    margin: 0 auto;
+    max-width: 600px;
+    background: white;
+    overflow-y: auto;
+    height: 400px;
+    border-radius: 8px;
+    border: 2px solid rgba(70, 126, 148, 0.493);
+    overflow-x: hidden;
+}
+
+.flex-contact {
+    display: flex;
+    height: 26%;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding: 10px 7px;
+    transition: all 200ms ease;
+}
+
+.flex-contact:hover {
+    background: rgb(206, 206, 206);
+}
+
+.flex-contact:hover .icons {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.name, .email, .information {
+    margin: 0;
+}
+
+.name {
+    font-weight: 100;
+}
+
+.email {
+    margin-top: 6px;
+    font-weight: bold;
+    color: rgba(128, 128, 128, 0.753);
+    display: inline-block;
+}
+
+.information {
+    flex-grow: 1;
+    flex-shrink: 2;
+    padding: 10px 0 10px 10px;
+}
+
+.photo {
+    flex-basis: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.photo img {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-list > article:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+.icons {
+    flex-basis: 45px;
+    display: flex;
+    align-items: center;
+    transition: all 200ms ease;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.trash {
+    margin-right: 10px;
+}
+
+.trash, .edit {
+    cursor: pointer;
+}
+
+.trash:hover {
+    color: darkred;
+}
+
+.edit:hover {
+    color: darkblue;
+}
+
+.flex-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
