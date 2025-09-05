@@ -1,0 +1,72 @@
+body {
+    background: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 100px;
+}
+
+.main-title {
+    margin-bottom: 30px;
+}
+
+.list {
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    padding: 2px;
+    gap: 20px;
+    list-style-type: none;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+.list-item {
+    width: 250px;
+    height: 350px;
+    background: url(../img/thumb02.jpg) right top / 100% 50% no-repeat;
+    border-radius: 8px 8px 0px 0px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .6);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 200ms ease;
+}
+
+.list-item-imagem img{
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-item-action {
+    background: #ccc;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-item-name {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+.list-item-email {
+    text-align: center;
+}
+
+.list-item:hover {
+    transform: scale(1.1) translateY(-5%);
+    filter: brightness(.7);
+}

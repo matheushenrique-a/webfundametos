@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    height: 100dvh;
+    background: aqua;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-title {
+    color: #385555;
+}
+
+.list-wrapper {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+    padding: 1px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    display: flex;
+    padding: 16px;
+}
+
+.list-item-imagem img {
+    width: 80px;
+    border-radius: 50%;
+}
+
+.list-item-content {
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+.list-item-name {
+    font-size: 24px;
+    color: #385555;
+    margin: 0;
+}
+
+.list-item-email {
+    margin: 5px 0 0;
+    color: #aaa;
+}
+
+.list-item-action {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    opacity: .3;
+    visibility: hidden;
+}
+
+.list-item:hover {
+    background: #e8e8e8;
+}
+
+.list-item:hover .list-item-action {
+    visibility: visible;
+}
+
+body:has(.list-item:hover){
+    background: yellow;
+}
