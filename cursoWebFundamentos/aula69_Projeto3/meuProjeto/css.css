@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0 10px;
+    background: #0C1013;
+    min-height: 100vh;
+}
+
+.global-site {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.heading {
+    background: #050709;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    align-items: center;
+    height: 60px;
+}
+
+.heading-title {
+    color: white;
+    text-transform: uppercase;
+}
+
+.heading-navigation {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.heading-navigation-item {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+    list-style-position: inside;
+}
+
+.heading-navigation-item-list a {
+    padding: 16px 8px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transition: all 100ms ease-in-out;
+}
+
+.heading-navigation-item-list a:hover {
+    background: #CBE30B;
+    color: black;
+}
+
+.main-heading-title {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
+}
+
+.flex-planos {
+    display: flex;
+    gap: 20px;
+    margin: 0 auto;
+    height: 60vh;
+}
+
+.flex-item {
+    background: #20262B;
+    border-radius: 5px;
+    padding: 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 33%;
+}
+
+.flex-item-heading {
+    border-bottom: 2px solid #CBE30B;;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.flex-item-heading-title {
+    margin: 10px 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.flex-item-paragraph {
+    text-align: left;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.flex-item-paragraph span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.flex-item-list {
+    text-align: left;
+    list-style-position: inside;
+    padding: 0;
+    color: #B1B3B5;
+}
+
+.flex-item-list-item::marker {
+    color: #CBE30B;
+}
+
+.flex-item-list-item {
+    margin-bottom: 10px;
+}
+
+.flex-item-button {
+    width: 80%;
+    padding: 15px 0;
+    background: #CBE30B;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    transition: all 100ms ease;
+    cursor: pointer;
+}
+
+.flex-item-button:hover {
+    background: none;
+}
+
+@media (max-width: 870px) {
+    body {
+        margin-bottom: 700px;
+    }
+
+    .heading {
+        flex-direction: column;
+        height: 130px
+    }
+
+    .main-heading-title {
+        font-size: 30px;
+    }
+
+    .flex-planos {
+        flex-direction: column;
+    }
+
+    .flex-item {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
