@@ -1,0 +1,106 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    background: url(../img/bg-2.jpg) right bottom / cover no-repeat;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: white;
+    padding: 50px 0;
+}
+
+.main-head__title {
+    text-transform: uppercase;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1px;
+}
+
+.main-head__text {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.733);
+    padding: 10px 16px;
+    border-bottom: 2px solid;
+    margin-top: 0;
+}
+
+.flex-container {
+    display: flex;
+    background: white;
+    max-width: 900px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 16px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.flex-container__item {
+    flex: 1 0 250px;
+    height: 200px;
+    display: flex;
+    transition: all 100ms ease;
+    transform: translateZ(0);
+    position: relative;
+}
+
+.--img1 {
+    background-image: url(../img/card_01.png);
+}
+
+.--img2 {
+    background-image: url(../img/card_02.jpg);
+}
+
+.--img3 {
+    background-image: url(../img/card_03.jpg);
+}
+
+.--img4 {
+    background-image: url(../img/card_04.jpg);
+}
+
+.--img5 {
+    background-image: url(../img/card_05.jpg);
+}
+
+.--img6 {
+    background-image: url(../img/card_01.png);
+}
+
+.--formatacao-img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.link {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+h2 {
+    margin: 0;
+    text-align: left;
+    background: rgb(0, 0, 0, .8);
+    padding: 8px 16px;
+    transition: all 100ms ease;
+    font-size: 18px;
+}
+
+h2:hover {
+    color: rgb(40, 196, 248);
+    filter: brightness(1);
+}
+
+.flex-container__item:hover {
+    transform: translateZ(80px);
+}
+
+
+

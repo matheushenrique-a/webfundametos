@@ -1,0 +1,44 @@
+html {
+    font-size: 62.5%;
+}
+
+p {
+    font-size: 3rem; /* aqui colocamos que TODO p terá font-size 3rem (3 x 10 do html) = 30px */
+    background: gold;
+    width: 10em;
+}
+
+.porcentagem {
+    width: 60%;
+    height: 500px;
+    background: rgb(233, 233, 16);
+    margin-bottom: 91px;
+}
+
+.porcentagem p {
+    background: orange;
+    padding-top: 50%;
+    width: 50%;
+    font-size: 1rem;
+}
+
+.padding-em {
+    background: red;
+}
+
+.padding-em p {
+    background: transparent;
+    margin: 0;
+    padding: 1em; /* em agora é referente ao resultado em px da font-size desse próprio elemento vezes os 3 (3 x 30 = 90px cada lado) */
+    font-size: 1rem;
+}
+
+.viewport-container {
+    font-size: 3rem;
+}
+
+.viewport {
+    width: 90vw;
+    height: 90vh;
+    background: rgba(0, 0, 255, 0.438);
+}
