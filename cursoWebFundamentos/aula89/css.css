@@ -1,0 +1,15 @@
+:root {
+    --color: blue;
+}
+
+.container {
+    --color: orange;
+}
+
+.div1 {
+    --color: green;
+}
+
+p {
+    color: var(--color);
+}

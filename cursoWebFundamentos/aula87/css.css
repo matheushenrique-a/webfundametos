@@ -1,0 +1,27 @@
+html {
+    font-size: 62.5%;
+    --header-height: 15rem;
+}
+
+header {
+    width: 100%;
+    background: rgba(255,0,0,.3);
+    height: var(--header-height);
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    min-height: calc(100vh - var(--header-height) - 2rem);
+    background-color: #ccc;
+    font-size: 2rem;
+    margin-top: var(--header-height);
+}
+
+footer {
+    height: 10rem;
+    font-size: 2rem;
+    background: blue;
+}

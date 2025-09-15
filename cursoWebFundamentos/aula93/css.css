@@ -1,0 +1,18 @@
+html {
+    font-size: 62.5%;
+}
+
+div {
+    width: 20em;
+    height: 10em;
+    background: black;
+    color: aliceblue;
+    outline: 4px solid red;
+    box-sizing: border-box;
+    outline-offset: -34px;
+    margin: 100px auto;
+}
+
+div:hover {
+    outline: 10px solid red;
+}

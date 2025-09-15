@@ -1,0 +1,29 @@
+html {
+    font-size: 62.5%;
+}
+
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3.9em;
+    color: #ffffff;
+    text-shadow: -1px 1px 0 rgba(0,0,0,.9),
+                 -2px 2px 0 rgba(0,0,0,.7),
+                 -3px 3px 0 rgba(0,0,0,.5), 
+                 -4px 4px 0 rgba(0,0,0,.3),
+                 -5px 5px 0 rgba(0,0,0,.1);
+
+}
+
+div {
+    background-color: rgb(168, 109, 0);
+    width: 30em;
+    height: 30em;
+    margin: 10em auto;
+    clip-path: inset(0 round 50px 20px 0px 80px / 100px 50px 0 20px);
+    padding: 2em;
+    border-radius: 50px 20px 0 80px / 100px 50px 0 20px;
+    box-shadow: 7px 0 0 0 black, 9px 0 5px 0 red, 6px 6px 0px red
+}

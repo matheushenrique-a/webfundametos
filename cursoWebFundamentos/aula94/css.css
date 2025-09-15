@@ -1,0 +1,23 @@
+@font-face {
+    font-family: nadia;
+    src: 
+    local("Nadia Serif"),
+    local("Nadia-Serif"),
+    url(fonts/nadia/nadia-serif.ttf) format("truetype"),
+    url(fonts/nadia/nadia-serif.woff) format("woff"),
+    url(fonts/nadia/nadia-serif.svg) format("svg");
+}
+
+@font-face {
+    font-family: cantarel;
+    src: 
+    local("Cantarel"),
+    url(fonts/cantarel/Cantarell-Regular.ttf) format("truetype"),
+    url(fonts/cantarel/cantarell-regular-webfont.woff) format("woff"),
+    url(fonts/cantarel/cantarell-regular-webfont.woff2) format("woff2");
+
+}
+
+h1 {
+    font-family: cantarel, nadia, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

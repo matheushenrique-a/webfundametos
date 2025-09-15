@@ -12,7 +12,6 @@ p {
     width: 60%;
     height: 500px;
     background: rgb(233, 233, 16);
-    margin-bottom: 91px;
 }
 
 .porcentagem p {
@@ -35,10 +34,27 @@ p {
 
 .viewport-container {
     font-size: 3rem;
+    height: auto;
 }
 
 .viewport {
     width: 90vw;
     height: 90vh;
     background: rgba(0, 0, 255, 0.438);
+}
+
+.em {
+    width: 20em;
+    margin: 1em;
+    padding: 1em;
+    background-color: orange;
+    font-size: 1.6em;
+}
+
+.ch {
+    width: 20ch;
+    margin: 1em;
+    padding: 1em;
+    background-color: orange;
+    font-size: 2em;
 }
