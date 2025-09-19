@@ -1,0 +1,26 @@
+:root {
+    --animation-one: cubic-bezier(.07,-0.17,.74,1.82);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+div {
+    background: orange;
+    width: 20rem;
+    height: 15rem;
+    margin: 10rem;
+    /* transition-property: width, height, margin-top;
+    transition-duration: .09s, .15s;
+    transition-timing-function: var(--animation-one);
+    transition-delay: 0s, .09s;
+    position: relative; */
+    transition: width .09s ease, height .15s ease .09s;
+    transition-timing-function: var(--animation-one);
+}
+
+.div:hover {
+    width: 40rem;
+    height: 30rem;
+}

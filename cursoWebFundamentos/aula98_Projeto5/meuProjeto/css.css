@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Italiana&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Italiana&family=Roboto:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap');
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem 2rem;
+    font-family: "Roboto", sans-serif;
+    max-width: 108rem;
+    margin: 0 auto;
+    background: aliceblue;
+}
+
+img {
+    display: block;
+}
+
+h1, h2 {
+    font-family: "Viaoda Libre", serif;
+    font-weight: normal;
+}
+
+.topo-cabecalho {
+    display: flex;
+    background: #162028;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.cabecalho__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: 100;
+}
+
+.cabecalho__navigation {
+    flex: 2;
+}
+
+.cabecalho__navigation ul {
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+    justify-content: flex-end;
+    height: 100%;
+    align-items: center;
+    padding-right: 3rem;
+}
+
+
+.cabecalho__navigation ul li a {
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: #425564;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
+    text-shadow: -.5px .5px rgba(0, 0, 0, 0.562);
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-shadow: -1px 1px black;
+}
+
+.cabecalho__navigation ul li a:hover {
+    color: white;
+    background: #425564;
+}
+
+.cabecalho-img {
+    width: 100%;
+    height: 45rem;
+}
+
+main {
+    padding-top: 5rem;
+}
+
+.first-section {
+    text-align: center;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.first-section h2 {
+    margin-bottom: 4rem;
+    font-size: 2.8rem;
+    color: #2b2b2b;
+}
+
+.first-section p {
+    line-height: 1.7;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5.5rem;
+    color: #555;
+}
+
+.first-section__gallery {
+    display: flex;
+    gap: 2rem;
+}
+
+.gallery-item {
+    flex: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: 28rem;
+    margin-bottom: 1.5rem;
+    transition: all 300ms cubic-bezier(.59,1.24,.84,1.55);
+}
+
+.gallery-item img:hover {
+    margin-bottom: 2.5rem;
+    opacity: 1.4;
+    filter: brightness(.9);
+}
+
+.gallery-item h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: .6rem;
+}
+
+.gallery-item p {
+    font-size: 1.2rem;
+}
+
+.second-section {
+    background: url(../img/bg_detalhe.png) right bottom no-repeat;
+    background-color: #003d52;
+    padding: 10rem;
+    color: white;
+}
+
+.second-section h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 2px;
+
+}
+
+.second-section p {
+    display: inline-block;
+    margin-top: 4rem;
+    width: 70%;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+footer {
+    background: #162028;
+    color: #425564;
+    padding: 2rem 4rem;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+@media (max-width:754px) {
+    body {
+        padding: 0;
+    }
+
+    .first-section__gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cabecalho__navigation ul li a {
+        font-size: 1rem;
+}
+
+    .first-section h2 {
+        margin: 2rem;
+        font-size: 3rem;
+    }
+
+    main {
+        padding-top: 2rem;
+    }
+}
