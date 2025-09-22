@@ -15,34 +15,49 @@ body {
 }
 
 .principal {
-    height: 100vh;
+    height: 90vh;
+    max-height: 1200px;
     background: linear-gradient(white, yellow);
     overflow: hidden;
 }
 
+
 .cabecalho-principal {
     background: #2a2a2a;
-    display: flex;
-    padding: 1rem 5rem 1rem 11rem;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     left: 0;
     right: 0;
-    border-bottom: 2px solid #ccc;
+    border-bottom: clamp(.3rem, .33dvw, 1.2rem) solid #ccc;
+    z-index: 1;
+   
+}
+
+.cabecalho-principal div {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.display-secundario {
+    margin-bottom: 2rem;
+    position: relative;
+    visibility: hidden;
 }
 
 .cabecalho-principal ul {
     display: flex;
     gap: 2rem;
     list-style-type: none;
+    gap: clamp(2rem, 1dvw, 6rem);
 }
 
 .cabecalho-principal a {
     text-decoration: none;
     color: orange;
     border: .1rem solid orange;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 1.54vw, 6rem);
     padding: 1rem;
     transition: all .3s cubic-bezier(.42,1.95,.69,.28);
 }
@@ -53,16 +68,21 @@ body {
 
 .cabecalho-principal h1 {
     cursor: pointer;
+    margin-left: clamp(5rem, 8dvw, 40rem);
+}
+
+.cabecalho-principal h1 img {
+    width: clamp(15rem, 13dvw, 50rem);
 }
 
 .mensagem-principal {
     display: flex;
-    margin: 10.5rem auto 0;
+    margin: 0 auto;
     align-items: stretch;
     justify-content: center;
     height: calc(100vh - 10.4rem);
-    max-height: 1000px;
-    padding: 2rem 2rem 0;
+    max-height: 100rem;
+    width: 90%;
     padding-right: 9rem;
     overflow: hidden;
 }
@@ -73,15 +93,15 @@ body {
     text-align: center;
     align-items: start;
     gap: 4rem;
-    padding-left: 9rem;
     flex: 1 1 0;
 }
 
-.mensagem__introducao p{
-    font-size: 3.6vw;
+.mensagem__introducao p {
+    font-size: clamp(2.5rem, 3.6dvw, 14.5rem);
     margin-top: 7rem;
     width: 70%;
     font-weight: normal;
+    text-align: left;
 }
 
 .mensagem__introducao div {
@@ -92,39 +112,54 @@ body {
 
 .mensagem__introducao a {
     display: block;
-    width: fit-content;
-    padding: 2rem 4rem;
+    padding: clamp(2rem, 1dvw, 4rem) clamp(4rem, 1.5dvw, 6rem);
     border-radius: 7px;
     background: orange;
-    font-size: 2rem;
+    font-size: clamp(2rem, 1.8dvw, 7rem);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     color: black;
+    opacity: 0;
+    transform: translateX(-200%);
     transition: border-radius 200ms cubic-bezier(0,1.57,.93,1.51);
+    animation: entrarSuave .5s ease-out forwards;
 }
 
-.mensagem__introducao a:hover {
-    background: rgb(156, 84, 17);
-    border-radius: 15px;
+@keyframes entrarSuave {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mensagem__introducao a:hover, .cursos__link a:hover {
+    background: #5C9AC1;
+    border-radius: 1.5rem;
     color: rgb(235, 234, 234);
 }
 
 .mensagem__imagem {
     flex: 1 1 0;
     display: flex;
-    justify-content: center;
 }
 
 .mensagem-principal img {
-    width: 80%;
+    width: 100%;
 }
 
 .cursos__div {
-    background: blue;
     display: flex;
-    gap: 2rem;
-    padding: 3rem 11rem;
+    gap: clamp(2rem, 2.5dvh, 5rem);
+    width: 90%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -132,18 +167,61 @@ body {
 .cursos__artigo {
     flex: 1 1 0;
     text-align: center;
-    background: white;
+    background: rgb(201, 47, 47);
     border-radius: .9rem;
-    outline: 2px solid black;
-    height: 35rem;
+    height: clamp(20rem, 30vw, 1000rem);
+    border: 1px solid #ccc;
 }
 
 .cursos__artigo div {
     width: 100%;
     height: 60%;
+    overflow: hidden;
 }
 
 .cursos__artigo img {
+    display: block;
     width: 100%;
     height: 100%;
+    transition: all 200ms ease;
+}
+
+.cursos__artigo img:hover {
+    transform: scale(1.2);
+}
+
+.cursos > h2 {
+    font-size: clamp(3rem, 2.7vw, 20rem);
+    margin-top: clamp(4rem, 1.4dvw, 8rem);
+    margin-bottom: clamp(4rem, 1.4dvw, 8rem);
+    text-align: center;
+}
+
+.cursos__artigo h3 {
+    font-size: clamp(2rem, 1.7dvw, 7rem);
+    margin-top: clamp(1rem, 1dvw, 3rem);
+    margin-bottom: clamp(1rem, 1dvw, 3rem);
+}
+
+.cursos__artigo p {
+    font-size: clamp(1.5rem, 1.2dvw, 5rem);
+}
+
+.cursos__link {
+    display: block;
+    margin-top: clamp(3.5rem, 1.9dvw, 7rem);
+    margin-bottom: clamp(2rem, 1.4dvw, 4rem);
+    text-align: center;
+}
+
+.cursos__link a {
+    background-color: orange;
+    text-decoration: none;
+    font-size: clamp(1.5rem, 1.54vw, 6rem);
+    padding: clamp(1.5rem, .8dvw, 4rem) clamp(3rem, 1.1dvw, 6rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    border-radius: .7rem;
+    transition: border-radius 200ms cubic-bezier(0,1.57,.93,1.51);
 }
