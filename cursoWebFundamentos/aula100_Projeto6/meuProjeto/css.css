@@ -14,10 +14,23 @@ body {
     font-family: "Alan Sans", sans-serif;
 }
 
+img {
+    display: block;
+}
+
+h2 {
+    font-size: clamp(3rem, 2.7vw, 20rem);
+    margin-top: clamp(4rem, 2dvw, 8rem);
+    margin-bottom: clamp(4rem, 2dvw, 8rem);
+    text-align: center;
+}
+
+p {
+    font-size: clamp(1.5rem, 1.2dvw, 5rem);
+}
+
 .principal {
-    height: 90vh;
-    max-height: 1200px;
-    background: linear-gradient(white, yellow);
+    max-height: 70vh;
     overflow: hidden;
 }
 
@@ -41,14 +54,12 @@ body {
 }
 
 .display-secundario {
-    margin-bottom: 2rem;
     position: relative;
     visibility: hidden;
 }
 
 .cabecalho-principal ul {
     display: flex;
-    gap: 2rem;
     list-style-type: none;
     gap: clamp(2rem, 1dvw, 6rem);
 }
@@ -57,7 +68,7 @@ body {
     text-decoration: none;
     color: orange;
     border: .1rem solid orange;
-    font-size: clamp(1.5rem, 1.54vw, 6rem);
+    font-size: clamp(1.2rem, 1.2vw, 5rem);
     padding: 1rem;
     transition: all .3s cubic-bezier(.42,1.95,.69,.28);
 }
@@ -68,20 +79,24 @@ body {
 
 .cabecalho-principal h1 {
     cursor: pointer;
-    margin-left: clamp(5rem, 8dvw, 40rem);
+    padding-bottom: 1rem;
 }
 
 .cabecalho-principal h1 img {
     width: clamp(15rem, 13dvw, 50rem);
+    aspect-ratio: 3 / 1.3;
 }
 
 .mensagem-principal {
+    background: linear-gradient(white, yellow);
+}
+
+.mensagem-principal > div {
     display: flex;
     margin: 0 auto;
     align-items: stretch;
     justify-content: center;
-    height: calc(100vh - 10.4rem);
-    max-height: 100rem;
+    height: calc(70vh - 1rem - (clamp(15rem, 13dvw, 50rem) * (1.3 / 3)));
     width: 90%;
     padding-right: 9rem;
     overflow: hidden;
@@ -90,15 +105,12 @@ body {
 .mensagem__introducao {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: start;
-    gap: 4rem;
     flex: 1 1 0;
 }
 
 .mensagem__introducao p {
-    font-size: clamp(2.5rem, 3.6dvw, 14.5rem);
-    margin-top: 7rem;
+    font-size: clamp(2rem, 3dvw, 9rem);
+    margin: auto 0;
     width: 70%;
     font-weight: normal;
     text-align: left;
@@ -110,12 +122,16 @@ body {
     justify-content: center;
 }
 
+.mensagem__button {
+    margin-bottom: auto;
+}
+
 .mensagem__introducao a {
     display: block;
-    padding: clamp(2rem, 1dvw, 4rem) clamp(4rem, 1.5dvw, 6rem);
+    padding: clamp(1rem, .8dvw, 3rem) clamp(3rem, 1dvw, 5rem);
     border-radius: 7px;
     background: orange;
-    font-size: clamp(2rem, 1.8dvw, 7rem);
+    font-size: clamp(1.4rem, 2dvw, 7rem);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -153,7 +169,7 @@ body {
 }
 
 .mensagem-principal img {
-    width: 100%;
+    width: 90%;
 }
 
 .cursos__div {
@@ -167,7 +183,6 @@ body {
 .cursos__artigo {
     flex: 1 1 0;
     text-align: center;
-    background: rgb(201, 47, 47);
     border-radius: .9rem;
     height: clamp(20rem, 30vw, 1000rem);
     border: 1px solid #ccc;
@@ -192,8 +207,6 @@ body {
 
 .cursos > h2 {
     font-size: clamp(3rem, 2.7vw, 20rem);
-    margin-top: clamp(4rem, 1.4dvw, 8rem);
-    margin-bottom: clamp(4rem, 1.4dvw, 8rem);
     text-align: center;
 }
 
@@ -205,12 +218,13 @@ body {
 
 .cursos__artigo p {
     font-size: clamp(1.5rem, 1.2dvw, 5rem);
+    padding: 0 1rem;
 }
 
 .cursos__link {
     display: block;
-    margin-top: clamp(3.5rem, 1.9dvw, 7rem);
-    margin-bottom: clamp(2rem, 1.4dvw, 4rem);
+    margin-top: clamp(5rem, 3dvw, 7rem);
+    margin-bottom: clamp(5rem, 3dvw, 7rem);
     text-align: center;
 }
 
@@ -225,3 +239,71 @@ body {
     border-radius: .7rem;
     transition: border-radius 200ms cubic-bezier(0,1.57,.93,1.51);
 }
+
+.our-school {
+    background: #003460;
+}
+
+.school-flex {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.school__image {
+    flex: 1 1 0;
+    display: flex;
+
+}
+
+.school__image img {
+    width: clamp(20rem, 30dvw, 100rem);
+}
+
+.school__text {
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: clamp(.3rem, 2.3dvw, 5rem);
+    color: white;
+}
+
+.school__text h2 {
+    margin: 0;
+    margin-bottom: auto;
+    text-align: left;
+}
+
+.school__text p {
+    margin-bottom: auto;
+    display: block;
+    width: 80%;
+}
+
+.contatos {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact__image {
+    margin-bottom: clamp(2rem, 1.5dvw, 5rem);
+}
+
+.contact__image img {
+    width: 100%;
+}
+
+.contact__address {
+    text-align: right;
+    margin-bottom: clamp(2rem, 1.5dvw, 5rem);
+}
+
+.rodape-principal {
+    text-align: center;
+    background-color: #232426;
+    padding: clamp(2rem, 2dvw, 7rem);
+    color: white;
+}
+
+
