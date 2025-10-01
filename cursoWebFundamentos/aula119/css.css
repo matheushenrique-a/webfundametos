@@ -1,0 +1,15 @@
+body {
+    font-family: sans-serif;
+}
+
+details {
+    background: #ccc;
+    font-size: 16px;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+details[open] {
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+}

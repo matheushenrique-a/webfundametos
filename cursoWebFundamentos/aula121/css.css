@@ -1,0 +1,54 @@
+body {
+    background: #e0ffff;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+
+section {
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.363);
+    width: 50%;
+    max-width: 400px;
+    background: white;
+    margin: auto;
+    border-radius: 8px;
+    padding: 10px;
+    position: relative;
+}
+
+div {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background: rgba(15, 85, 235, 0.959);
+    width: 60px;
+    height: 30px;
+    color: white;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+::backdrop {
+    background: rgba(0, 0, 0, 0.308);
+}
+
+:popover-open {
+    border-radius: 8px;
+    background: white;
+    inset: unset;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 20px;
+    margin-top: 15px;
+}

@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    table-layout: fixed;
+}
+
+th {
+    background: #BFC465;
+    padding: 10px 20px;
+    border: 1px solid #794706;
+}
+
+tbody, tfoot {
+    background: #F5F5DD;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px 10px;
+}
+
+.preco {
+    font-weight: bold;
+    color: rgb(22, 82, 49);
+}
