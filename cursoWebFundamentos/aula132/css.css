@@ -1,0 +1,11 @@
+meter::-webkit-meter-optimum-value {
+    background: green; /* valores “bons” */
+}
+
+meter::-webkit-meter-suboptimum-value {
+    background: orange; /* valores “aceitáveis” */
+}
+
+meter::-webkit-meter-even-less-good-value {
+    background: red; /* valores “ruins” ou baixos */
+}

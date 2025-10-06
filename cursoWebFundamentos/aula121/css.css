@@ -40,7 +40,7 @@ button {
     inset: unset;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(100%);
 }
 
 h2 {

@@ -1,0 +1,88 @@
+html {
+    background: #95a5a6;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+form {
+    width: 350px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px #333;
+    padding: 1em;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+legend {
+    padding: 1em;
+    font-weight: bold;
+    text-align: center;
+    color: #454e4f;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+label {
+    margin-bottom: .25em;
+}
+
+input, label {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    padding: .75em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+    border: 1px solid #bbb;
+    font-size: 1em;
+}
+
+.btn {
+    width: fit-content;
+    margin-left: auto;
+    background: rgb(43, 43, 128);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    background: rgb(43, 43, 98);
+}
+
+.btn--apagar:hover {
+    background: rgb(102, 35, 45);
+}
+
+.btn2 {
+    background: rgb(43, 43, 128);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 1em;
+}
+
+.btn--apagar {
+   background: rgb(128, 43, 56); 
+}

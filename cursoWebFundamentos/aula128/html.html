@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <form action="get">
+        <fieldset>
+            <legend>Introdução</legend>
+            <input type="email" name="email" disabled value="meuemail@giamo.com" required>
+            <br><br>
+            <label for="number">Quantidade de filhos</label>
+            <br>
+            <input type="number" name="number" id="number" min="0" max="20">
+            <br><br>
+            <input type="date" name="date" id="date" min="2022-01-15" max="2023-12-15">
+            <br><br>
+            Possui atividade extra?
+            <br>
+            <input type="radio" name="radio" id="radioY" value="yes"> <label for="radioY">Sim</label>
+            <input type="radio" name="radio" id="radioN" value="no"> <label for="radioN">Não</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Área de interesse</legend>
+            <label>
+                <input type="checkbox" name="interesse" value="html" id="">HTML
+            </label>
+            <label>
+                <input type="checkbox" name="interesse" value="css" id="">CSS
+            </label>
+            <label>
+                <input type="checkbox" name="interesse" value="javascript" id="">JavaScript
+            </label>
+            <label>
+                <input type="checkbox" name="interesse" value="python" id="">Python
+            </label>
+            <label>
+                <input type="checkbox" name="interesse" value="java" id="">Java
+            </label>
+            <br><br>
+            <label> ESCOLHA UMA LINGUAGEM <br>
+                <select name="linguagem" id="" required multiple size="3">
+                <option value="">Selecione uma opção</option>
+                <optgroup label="Front-end">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                </optgroup>
+                <optgroup label="Back-end">
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </optgroup>
+            </select>
+
+            <input type="text" list="lista">
+            <datalist id="lista">
+                <option value="HTML">
+                <option value="CSS">
+                <option value="Javascript">
+                <option value="Python">
+                <option value="Java">
+                <option value="PHP">
+            </datalist>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Mensagem</legend>
+            <textarea name="msg" id="" cols="30" maxlength="160" rows="5" placeholder="Digita alguma coisa aqui..."></textarea>
+            <textarea cols="30" rows="5" readonly>
+CONTRATO DE UTILIZAÇÃO
+1.1 REGRA 1
+1.2 REGRA 2
+            </textarea>
+        <label>
+            <input type="checkbox" checked name="check" id="" value="on">Li e aceito o contrato
+        </label>
+        <br><br>
+
+        <input type="file" name="ap" id="a">
+
+        <input type="hidden" name="" value="abcdef123">
+        </fieldset>
+
+        <br><br><br>
+        <input type="submit" value="MAnDar">
+        <input type="button" value="Mandar">
+        <button type="submit">MAnDar</button>
+        <button type="button">Mandar</button>
+
+        <input type="search" name="" id="">
+
+        <input type="range" min="0" max="10" step=".1">
+
+        <input type="time" name="" id="">
+
+        <input type="color" name="" id="">
+    </form>
+</body>
+</html>
