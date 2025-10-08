@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Formulário de Contato</legend>
+            <label for="name">Seu nome</label>
+            <input type="text" name="name" id="name" placeholder="Digite seu nome completo" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Digite um email válido" required>
+            <label for="assunto">Assunto</label>
+            <input type="text" name="assunto" id="assunto">
+            <label for="mensagem">Mensagem</label>
+            <div>
+                <textarea name="mensagem" id="mensagem" minlength="20" maxlength="150" required></textarea>
+                <span id="contador"></span>
+            </div>
+            <input class="enviar" type="submit" value="Enviar">
+        </fieldset>
+    </form>
+<script src="js.js"></script>
+</body>
+</html>
